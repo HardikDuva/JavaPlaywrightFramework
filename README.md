@@ -11,7 +11,15 @@
     ```
      install maven
     ```
-3. Install Docker desktop
+3. Install Playwright
 
 ### Run your First Test
+4. Set-up Test-Data and configuration file.
 
+5. Create page object from pages and declare webelement in FindBy 
+Generally playwright doesn't support FindBy but here we have created method in AbstarctionPOM file and also declare
+selector in FindBy interface
+
+6. Create TCS.
+
+7. Create testsuitefile according to requirnment and run it with required parameter.
