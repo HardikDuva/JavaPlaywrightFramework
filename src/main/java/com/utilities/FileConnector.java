@@ -29,30 +29,6 @@ public class FileConnector {
 	}
 
 	/**
-	 * Delete directory from specific path
-	 */
-	public static void deleteDir(String path) {
-		Path directory = Paths.get(path);
-		try {
-			Files.walkFileTree(directory, new SimpleFileVisitor<>() {
-				@Override
-				public FileVisitResult visitFile(Path file, BasicFileAttributes attributes) throws IOException {
-					Files.delete(file); // this will work because it's always a File
-					return FileVisitResult.CONTINUE;
-				}
-
-				@Override
-				public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
-					Files.delete(dir); //this will work because Files in the directory are already deleted
-					return FileVisitResult.CONTINUE;
-				}
-			});
-		} catch (IOException e) {
-			printMsgOnConsole("-");
-		}
-	}
-
-	/**
 	 * Get current Date
 	 */
 	public static String getCurrentDate() {

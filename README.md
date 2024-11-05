@@ -14,14 +14,6 @@
 3. Install Playwright
 
 ### Run your First Test
-1. Clone the Data-Drivern-Framework repository. 
-```
-git clone https://github.com/HardikDuva/JavaPlaywrightFramework.git and make sure all the dependency in pom.xml file are upto date
-```
-2. Set-up Test Data file and configuration file
-Make sure all the necessary data are there.
-
-3. Write test case for Login Page(You can write test case for any page)
 4. Set-up Test-Data and configuration file.
 
 5. Create page object from pages and declare webelement in FindBy 

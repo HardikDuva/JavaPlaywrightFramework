@@ -9,11 +9,10 @@ import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.utilities.*;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.testng.*;
+import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -99,6 +98,7 @@ public class BaseTest {
 	public void generateReport() throws IOException {
 		extentReports.flush();
 		playwright.close();
+
 		if(SEND_EMAIL) {
 			sendEmail();
 		}
@@ -115,6 +115,7 @@ public class BaseTest {
 				File.separator + "ScreenShot" + File.separator + FileConnector.getRandomInt(1,100)
 				+ "_" + DateTimeConnector.getTimeStamp() + "_.png";
 		page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(screenshotPath)));
+
 		extentTest.addScreenCaptureFromPath(screenshotPath);
 		extentTest.log(Status.FAIL,msg);
 		printMsgOnConsole(msg);
